@@ -1,0 +1,353 @@
+:root {
+    --auburn-blue: #0C2340;
+    --auburn-orange: #cc4e0b;
+    --bg-white: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.08);
+}
+
+
+.docScrollContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.docContentArea {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    gap: 2rem;
+    width: 95%;
+}
+
+.titleArea {
+    position: relative;
+    padding-left: 2rem;
+    flex: 1;
+}
+
+.title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--auburn-blue);
+    margin: 0;
+    font-weight: 800;
+}
+
+.au {
+    color: var(--auburn-orange);
+}
+
+.subtitle {
+    color: #555;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.logoButton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerLogo {
+    height: 100px;
+    max-width: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+.docLogoLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.statsGridWrapper {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem 0;
+    margin-top: 2rem;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.statCard {
+    background: var(--auburn-blue);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(12, 35, 64, 0.15);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+}
+
+.statIconWrapper {
+    color: var(--auburn-orange);
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+}
+
+.statValue {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--auburn-orange);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.statLabel {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.separator {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--auburn-orange), transparent);
+    border: none;
+    margin: 4rem auto;
+    width: 60%;
+    border-radius: 2px;
+}
+
+.faqWrapper {
+    max-width: 900px;
+    width: 95%;
+    margin: 1rem 4rem;
+}
+
+.faqHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 3rem;
+    color: var(--auburn-blue);
+}
+
+.faqTitleIcon {
+    color: var(--auburn-orange);
+}
+
+.faqMainTitle {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.faqItem {
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #fff;
+}
+
+.faqHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--auburn-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.faqHeader.active {
+    color: var(--auburn-orange);
+    border-bottom: 1px solid #eee;
+}
+
+.faqIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answerInner {
+    padding: 2rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--auburn-blue);
+    font-weight: 600;
+}
+
+
+
+.decoration {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        var(--auburn-orange) 30%,
+        var(--auburn-orange) 70%,
+        transparent 100%
+    );
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--auburn-orange);
+    border-radius: 50%;
+    margin-top: 1rem;
+    box-shadow: 0 0 0 4px rgba(204, 78, 11, 0.2);
+}
+
+.wordSpace {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.ausmeBrand {
+    display: inline-flex;
+}
+
+.ausmeAu {
+    color: var(--auburn-orange);
+    font-weight: 800;
+}
+
+.ausmeSme {
+    color: var(--auburn-blue);
+    font-weight: 800;
+}
+
+.titleUnderline {
+    height: 4px;
+    background: linear-gradient(90deg, var(--auburn-orange) 0%, var(--auburn-blue) 100%);
+    margin: 1.5rem 0;
+    border-radius: 2px;
+}
+
+
+.answerInner :global(.ausme-au) {
+    color: var(--auburn-orange);
+    font-weight: 700;
+}
+
+.answerInner a {
+    color: var(--auburn-blue);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.answerInner b, .answerInner strong {
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .titleArea {
+        padding-left: 0;
+    }
+
+    .decoration {
+        display: none;
+    }
+
+    .headerLogo {
+        height: 80px;
+    }
+
+    .statValue {
+        font-size: 2.2rem;
+    }
+
+    .docContentArea {
+        padding: 1rem;
+    }
+
+    .faqMainTitle {
+        font-size: 1.8rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+

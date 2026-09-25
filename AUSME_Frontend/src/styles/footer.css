@@ -1,0 +1,88 @@
+.footer_content {
+    height: 60px; /* Fixed height for footer bar */
+    width: 100%;
+    z-index: 100;
+}
+
+.tool_info {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--auburn_blue);
+    color: white;
+}
+
+.tool_info .btn-about-ausme, .feedback-button {
+    background: var(--auburn_orange);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool_info .btn-about-ausme:hover, .feedback-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(232, 110, 31, 0.4);
+}
+
+.tool_info .link {
+    color: var(--auburn_second_orange);
+    text-decoration: underline;
+    margin: 0 4px;
+}
+
+/* Modals & Overlays */
+.popup-overlay, .feedback-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #f4f4f4;
+    border-radius: 12px;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    color: var(--auburn_blue);
+}
+
+.feedback-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    padding: 2em;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+    z-index: 10000;
+}
+
+.feedback-form textarea {
+    height: 150px;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+
+/* Close buttons, QNA boxes, etc remain the same as your CSS snippet */

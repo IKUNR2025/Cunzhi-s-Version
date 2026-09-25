@@ -1,0 +1,453 @@
+.pagination-master-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-main-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+}
+
+.papers-view-window {
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.pagination-numbers {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.pagination-numbers button.active {
+    background: var(--auburn_blue);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.paper-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-numbers button {
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px #aaa, -2px -2px 5px #fff;
+}
+
+.pagination-numbers button:hover:not(:disabled) {
+    background: linear-gradient(145deg, #d1eaff, #c2e3ff);
+    box-shadow: inset 2px 2px 5px #aaa, inset -2px -2px 5px #fff;
+    transform: translateY(-2px);
+}
+
+.pagination-numbers button.active {
+    color: white;
+    font-size: 15px;
+    border: 2px solid #0046a3;
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.8);
+    background: #03244D; /* Auburn Blue */
+    transform: scale(1.1);
+}
+
+.pagination-numbers button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.papers-list.slide-out-left {
+    animation: slideOutLeft 0.6s ease-in-out forwards;
+}
+
+.papers-list.slide-in-right {
+    animation: slideInFromRight 0.6s ease-in-out forwards;
+}
+
+.papers-list.slide-out-right {
+    animation: slideOutRight 0.6s ease-in-out forwards;
+}
+
+.papers-list.slide-in-left {
+    animation: slideInFromLeft 0.6s ease-in-out forwards;
+}
+
+
+.pagination-numbers button.dots {
+    background: none;
+    box-shadow: none;
+    cursor: default;
+    color: var(--auburn_blue);
+    padding: 8px 4px;
+}
+
+.pagination-numbers button.dots:hover {
+    transform: none;
+    background: none;
+}
+
+
+.side-nav-btn {
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Soft neumorphic shadows */
+    box-shadow: 4px 4px 10px #ccc, -4px -4px 10px #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    color: var(--auburn_blue);
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.side-nav-btn:hover:not(:disabled) {
+    /* Subtle change to the background gradient */
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    /* "Popping" shadow effect */
+    box-shadow: 6px 6px 15px #bbb, -6px -6px 15px #fff;
+    color: var(--auburn_orange); /* Accent color shift */
+}
+
+.side-nav-btn:active:not(:disabled) {
+    /* "Pressed" neumorphic effect */
+    box-shadow: inset 2px 2px 5px #aaa, inset -2px -2px 5px #fff;
+    transform: scale(0.95);
+}
+
+.side-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    box-shadow: none;
+    background: #f5f5f5;
+}
+
+.side-nav-btn i {
+    display: inline-block;
+}
+
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.papers-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-nav-btn {
+    position: absolute;
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    background: rgba(3, 36, 77, 0.9);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-nav-btn.left {
+    left: -25px;
+}
+
+.floating-nav-btn.right {
+    right: -25px;
+}
+
+.floating-nav-btn:hover:not(:disabled) {
+    background: #f66733; /* Auburn Orange on hover */
+    border-color: white;
+}
+
+.floating-nav-btn:disabled {
+    opacity: 0; /* Hide when not usable to keep UI clean */
+    pointer-events: none;
+}
+
+
+
+
+.pagination-numbers button.active {
+    background: #03244D;
+    color: white;
+    box-shadow: 0 4px 10px rgba(3, 36, 77, 0.2);
+}
+
+
+
+.papers-advanced-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+/* Modern Search with Glow */
+.modern-search-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #94a3b8;
+    z-index: 2;
+}
+
+.modern-search-container input {
+    width: 100%;
+    padding: 12px 110px 12px 40px;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    height: 38px;
+}
+
+.search-actions-wrapper {
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-clear-btn {
+    background: #fff1ed;
+    border: 1px solid var(--auburn_orange);
+    color: var(--auburn_orange);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(246, 103, 51, 0.1);
+}
+
+.search-clear-btn:hover {
+    background: var(--auburn_orange);
+    color: white;
+}
+
+
+
+
+.toggle-option.active {
+    color: white;
+}
+
+.toggle-option.active i {
+    color: var(--auburn_orange);
+    filter: drop-shadow(0 0 5px rgba(246, 103, 51, 0.4));
+    font-size: 1.1rem;
+}
+
+.toggle-option:hover:not(.active) {
+    color: var(--auburn_orange);
+}
+
+.toggle-glider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    width: calc(50% - 4px);
+    background: var(--auburn_blue);
+    border-radius: 10px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(3, 36, 77, 0.2);
+}
+
+.toggle-glider.cited {
+    transform: translateX(100%);
+}
+
+@media (max-width: 768px) {
+    .papers-advanced-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
+.pagination-master-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.pagination-content-top {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    /* We remove overflow: hidden here so buttons can hang off the sides */
+    position: relative;
+    min-height: 0;
+}
+
+.papers-view-relative-container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    /* Do NOT put overflow: hidden here or buttons will disappear */
+}
+
+.papers-view-window {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 10px;
+    /* This is where the scroll happens */
+    position: relative;
+}
+
+.floating-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    background: #03244D;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Higher z-index to stay above cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-nav-btn.left {
+    left: -25px; /* Pulls button out to the left */
+}
+
+.floating-nav-btn.right {
+    right: -25px; /* Pulls button out to the right */
+}
+
+.floating-nav-btn:hover:not(:disabled) {
+    background: #f66733;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.floating-nav-btn:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pagination-footer-section {
+    flex: 0 0 auto;
+    margin-top: auto;
+    z-index: 10;
+}
+
+.papers-view-window::-webkit-scrollbar {
+    width: 5px;
+}
+
+.papers-view-window::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}

@@ -1,0 +1,60 @@
+.test-layout-split {
+    display: flex;
+    gap: 20px;
+}
+
+.main-view {
+    flex: 1;
+}
+
+.test-sidebar {
+    width: 300px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+    padding: 15px;
+}
+
+.activity-widget h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #03244d;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.activity-item:hover {
+    background: #f8f9fa;
+}
+
+.icon-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icon-circle.view { background: #03244d; }
+.icon-circle.click { background: #f66733; }
+
+.activity-text {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.activity-time {
+    font-size: 0.75rem;
+    color: #888;
+}

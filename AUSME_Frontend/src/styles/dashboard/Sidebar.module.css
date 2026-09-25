@@ -1,0 +1,321 @@
+.sidebar {
+    height: 100vh;
+    background: linear-gradient(180deg, #040d1a 0%, #081629 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 15px 0 50px rgba(0, 0, 0, 0.6);
+    overflow: visible;
+}
+
+.mobileToggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    width: 45px;
+    height: 45px;
+    background: #E87722;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(232, 119, 34, 0.4);
+}
+
+.mobileOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+.header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: white;
+    margin: 15px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.logoHoriz {
+    max-width: 100%;
+    height: auto;
+}
+
+.logoVert {
+    max-height: 55px;
+    width: auto;
+}
+
+.profileWrapper {
+    padding: 10px 20px 25px 20px;
+    flex-shrink: 0;
+}
+
+.clickableAvatar {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clickableAvatar:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.glassCard {
+    position: relative;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.glassCard .activeGlow {
+    left: 0;
+    height: 35px;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 2px solid #E87722;
+    object-fit: cover;
+    object-position: top;
+    background: #fff;
+}
+
+.username {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.roleLabel {
+    color: #E87722;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.navStack {
+    flex: 1;
+    padding: 0 15px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.navItem {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.collapsed .navStack {
+    overflow: visible;
+}
+
+.collapsed .navItem:hover::after,
+.collapsed .clickableAvatar:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 75px;
+    background: #E87722;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    z-index: 2000;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+
+.navItem:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.navItem:hover .navIcon {
+    color: #E87722;
+    transform: scale(1.1);
+}
+
+.active {
+    background: linear-gradient(90deg, rgba(232, 119, 34, 0.2) 0%, rgba(232, 119, 34, 0.05) 100%) !important;
+    border: 1px solid rgba(232, 119, 34, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.active .navIcon {
+    color: #E87722 !important;
+    filter: drop-shadow(0 0 8px rgba(232, 119, 34, 0.5));
+}
+
+.navIcon {
+    font-size: 1.2rem;
+    width: 30px;
+    margin-right: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.linkLabel {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.activeGlow {
+    position: absolute;
+    left: -15px;
+    width: 6px;
+    height: 28px;
+    background: #E87722;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 4px 0 15px rgba(232, 119, 34, 0.8);
+}
+
+.footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggleBtn, .logoutBtn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.logoutBtn {
+    border-color: rgba(232, 119, 34, 0.4);
+    color: #E87722;
+}
+
+.logoutBtn:hover {
+    background: #E87722;
+    color: white;
+}
+
+.collapsed .header {
+    margin: 10px;
+    padding: 8px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.collapsed .profileWrapper {
+    padding: 10px;
+}
+
+.collapsed .glassCard {
+    padding: 8px;
+    justify-content: center;
+}
+
+.collapsed .navItem {
+    padding: 0;
+    justify-content: center;
+}
+
+.collapsed .navIcon {
+    margin-right: 0;
+    font-size: 1.2rem;
+}
+
+.collapsed .activeGlow {
+    left: -10px;
+}
+
+.collapsed .glassCard .activeGlow {
+    left: -8px;
+}
+
+.collapsed .toggleBtn span {
+    display: none;
+}
+
+
+.nav-icon,
+.fas,
+.fa-solid {
+    font-size: 0.9em;
+}
+
+
+
+.navStack {
+    flex: 1;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.aboutWrapper {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aboutNavItem {
+    background: rgba(232, 119, 34, 0.05);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 280px !important;
+        transform: translateX(-100%);
+        position: fixed;
+    }
+    .mobileToggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+    }
+}

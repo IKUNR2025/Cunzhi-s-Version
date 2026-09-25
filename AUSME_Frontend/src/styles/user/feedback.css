@@ -1,0 +1,215 @@
+.feedback-vertical-tab.modern-anchored {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--auburn_blue);
+    color: white;
+    padding: 5px 3px;
+    cursor: pointer;
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 2000;
+    box-shadow: -4px 0 15px rgba(3, 36, 77, 0.15);
+    transition: background 0.3s ease;
+}
+
+.feedback-vertical-tab.modern-anchored:hover {
+    background: var(--auburn_blue);
+    animation: anchorShake 0.4s ease-in-out infinite;
+}
+
+.feedback-vertical-tab.modern-anchored i {
+    color: var(--auburn_second_orange);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.feedback-vertical-tab.modern-anchored:hover i {
+    transform: scale(1.1);
+}
+
+@keyframes anchorShake {
+    0% { transform: translateY(-50%) translateX(0); }
+    25% { transform: translateY(-50%) translateX(-4px); }
+    50% { transform: translateY(-50%) translateX(0); }
+    75% { transform: translateY(-50%) translateX(-4px); }
+    100% { transform: translateY(-50%) translateX(0); }
+}
+
+.feedback-vertical-tab span {
+    writing-mode: vertical-rl;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.feedback-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 36, 77, 0.2);
+    backdrop-filter: blur(6px);
+}
+
+.feedback-backdrop-public {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 36, 77, 0.34);
+    backdrop-filter: blur(6px);
+}
+
+.feedback-modal.centered.professional-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 450px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+    border: 1px solid #f1f5f9;
+    z-index: 3001;
+}
+
+.title-center {
+    color: var(--auburn_blue);
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.close-btn-circle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f8fafc;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.close-btn-circle:hover {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+textarea {
+    width: 100%;
+    height: 140px;
+    border-radius: 12px;
+    border: 2px solid #f1f5f9;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #ffffff;
+    resize: none;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--auburn_blue);
+    box-shadow: 0 0 0 4px rgba(3, 36, 77, 0.05);
+}
+
+.rating-group-below {
+    margin: 25px 0;
+}
+
+.stars-row-modern {
+    display: flex;
+    gap: 15px;
+}
+
+.stars-row-modern i {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #f1f5f9;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.stars-row-modern i:hover {
+    transform: scale(1.15);
+}
+
+.stars-row-modern i.active {
+    color: #F66733; /* Auburn Orange */
+}
+
+.submit-btn-auburn {
+    width: 100%;
+    background: var(--auburn_blue);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit-btn-auburn:hover:not(:disabled) {
+    background: #F66733;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(246, 103, 51, 0.2);
+}
+
+.submit-btn-auburn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.feedback-success {
+    text-align: center;
+}
+
+.success-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: #f0fdf4;
+    color: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    font-size: 1.4rem;
+}

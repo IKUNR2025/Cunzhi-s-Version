@@ -1,0 +1,49 @@
+.user-list-wrapper {
+    width: 100%;
+    min-height: 400px;
+    display: block;
+    height: auto;
+    overflow: visible;
+}
+
+.cards-grid-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(clamp(300px, 25vw, 500px), 1fr)
+    );
+    gap: 15px;
+    width: 100%;
+}
+
+
+.loading-trigger {
+    padding: 60px 40px;
+    text-align: center;
+    color: #03244D;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.spinner-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.spinner-dots span {
+    width: 12px;
+    height: 12px;
+    background-color: #E87722; /* Auburn Orange */
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.spinner-dots span:nth-child(2) { animation-delay: 0.2s; }
+.spinner-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    to { transform: translateY(-10px); opacity: 0.5; }
+}

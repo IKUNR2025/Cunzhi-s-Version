@@ -1,0 +1,65 @@
+.about-page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 10px;
+    background-color: var(--gray);
+}
+
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    /* Sticky Magic */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+
+    /* Sizing & Centering */
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    padding: 12px;
+    border-radius: 50px;
+}
+
+.tab-button-about {
+    padding: 12px 24px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex: 1;
+    justify-content: center;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    font-size: 0.95rem;
+}
+
+.tab-button-about:hover {
+    background: #e0e0e0;
+    color: var(--auburn-orange);
+}
+
+.tab-button-about.active {
+    background: #03244d; /* Auburn Blue */
+    box-shadow: 0 4px 15px rgba(3, 36, 77, 0.3);
+    color: white;
+}
+
+.tab-button-about.active svg {
+    color: var(--auburn-orange);
+}
+
+/* Optional: Add a smooth shadow when scrolling */
+.tab-navigation {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
